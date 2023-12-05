@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Musicas</title>
+  <link rel="icon" href="img/icon.png">
+  <link rel="stylesheet" href="css/framework/bootstrap.min.css">
+  <link rel="stylesheet" href="css/framework/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/aplicacao/CadastroMusica.css">
+  <script src="js/framework/jquery.js"></script>
+  <script src="js/framework/bootstrap.bundle.min.js"></script>
+  <script src="js/framework/cleave.min.js"></script>
+</head>
+
+<body>
+  <!------------------------------------------------------------------------------------------------->
+  <!--                                       Load                                                   -->
+  <!------------------------------------------------------------------------------------------------->
+  <div id="load" style="display: none;">
+    <div class="lds-dual-ring">
+      <div class="logo">
+        <img src="/img/icon.png" alt="">
+      </div>
+    </div>
+  </div>
+  <!------------------------------------------------------------------------------------------------->
+  <!--                                       Conteudo                                              -->
+  <!------------------------------------------------------------------------------------------------->
+  <div id="cadastroMusica" style="display: none;">
+    <div class="formulario">
+      <div class="formFundo">
+        <div class="form">
+          <div id="divNome">
+            <div class="divLabel">
+              <label>Nome da Música</label>
+            </div>
+            <div class="divInput">
+              <input type="text" id="inputNome" />
+            </div>
+          </div>
+          <div id="divCantor">
+            <div class="divLabel">
+              <label>Cantor(a)</label>
+            </div>
+            <div class="divInput">
+              <input type="text" id="inputCantor" />
+            </div>
+          </div>
+          <div id="divGenero">
+            <div class="divLabel">
+              <label>Gênero da Música</label>
+            </div>
+            <div class="divInput">
+              <input type="text" id="inputGenero" />
+            </div>
+          </div>
+          <div class="linhaFlex">
+            <input type="button" id="btnSalvar" value="Salvar" class="botoes" />
+            <input type="button" id="btnCancelar" value="Cancelar" class="botoes" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tabela" style="display: block;">
+    <h1>
+      Cadastros de Músicas
+    </h1>
+
+    <div id="linhaBotoes">
+      <div class="linhaBotoes">
+        <input type="button" value="Novo" onclick="novoCadastro()" class="btnNovo" />
+      </div>
+    </div>
+
+    <div class="lista">
+      <table>
+        <thead class="cabecalho">
+          <th class="colunaID">ID</th>
+          <th>Nome da Música</th>
+          <th>Cantor(a)</th>
+          <th>Gênero da Música</th>
+          <th class="icone"></th>
+          <th class="icone"></th>
+          <th class="scrool"></th>
+        </thead>
+        <tbody id="tabelaMusicas">
+  
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!------------------------------------------------------------------------------------------------->
+  <!--                                       Modal                                                 -->
+  <!------------------------------------------------------------------------------------------------->
+  <div id="modalMsg" class="modalMsg">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content mod">
+        <div class="modal-header">
+          <h6 class="modal-title">Aviso</h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="closeModal()"></button>
+        </div>
+        <div class="modal-body">
+          <p class="pModal" id="modTxt"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------------------------------------------------------------------------->
+  <!--                                                                                             -->
+  <!------------------------------------------------------------------------------------------------->
+  <script src="js/framework/bootstrap.bundle.min.js"></script>
+  <script src="js/aplicacao/CadastroMusica.js"></script>
+  <script src="js/aplicacao/servidor.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      eval('initCadastroMusica()')
+    }
+  </script>
+
+</body>
+
+</html>
